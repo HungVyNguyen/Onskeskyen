@@ -1,4 +1,4 @@
-package com.example.onskeskyen.product;
+package com.example.onskeskyen.models;
 
 public class Product {
     private int id;
