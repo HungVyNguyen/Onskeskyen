@@ -84,5 +84,66 @@ footer {
 }
 
 footer p {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-button,
+.addlist-button {
+    background-color: #f7f7f7;
+    border: none;
     color: #666;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logout-button:hover,
+.addlist-button:hover {
+    background-color: #ccc;
+    color: #333;
+}
+.new-product-form {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.new-product-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.new-product-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.new-product-form button {
+    background-color: lavender;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.new-product-form button:hover {
+    background-color: lavenderblush;
+}
+
+.wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
