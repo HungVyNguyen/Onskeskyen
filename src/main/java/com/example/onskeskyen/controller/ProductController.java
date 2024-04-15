@@ -1,6 +1,5 @@
 package com.example.onskeskyen.controller;
 
-import com.example.onskeskyen.product.Product;
 import com.example.onskeskyen.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
