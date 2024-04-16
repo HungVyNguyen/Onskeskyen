@@ -12,12 +12,12 @@
 </header>
 
 <div class="new-product-form">
-    <form action="/insertprodukt" method="post">
+    <form action="/insert" method="post">
         <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title">
         </div>
-        <input type="hidden" name="userid3" value="${userid4}">
+        <input type="hidden" name="userid3" th:value="${userid4}">
         <button type="submit">Insert</button>
     </form>
 

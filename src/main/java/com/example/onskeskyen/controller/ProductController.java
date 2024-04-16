@@ -23,7 +23,7 @@ public class ProductController {
         return "home/index";
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/remove")
     public String delete(@RequestParam int product_id) {
         productService.delete(product_id);
         return "home/index";
