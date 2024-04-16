@@ -22,4 +22,9 @@ public class userRepository {
         return jdbcTemplate.query(quary,rowMapper);
     }
 
+    public int getUserIdForWishlist(int wishlistId) {
+        String query = "SELECT user_id FROM wishlists WHERE wishlist_id = ?";
+        return jdbcTemplate.queryForObject(query, Integer.class, wishlistId);
+    }
+
 }

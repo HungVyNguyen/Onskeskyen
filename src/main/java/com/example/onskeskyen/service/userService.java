@@ -17,4 +17,8 @@ public class userService {
     public List<User> getuserlist() {
         return userrepository.getuserlist();
     }
+    public int getUserIdForWishlist(int wishlistId) {
+        // Delegate the call to userRepository
+        return userrepository.getUserIdForWishlist(wishlistId);
+    }
 }
