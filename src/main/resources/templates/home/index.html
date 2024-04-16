@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <title>WishCloud</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" media="screen, projection"/>
+
+
 </head>
 <body>
 
-<h1>HELLO WORLD</h1>
+
+<header>
+    <div class="header-container" >
+        <img th:class="logo" src="/images/logo.jpg" alt="Logo image">
+        <h1>Wish Cloud</h1>
+    </div>
+</header>
+
+
+<section class="inspiration-section">
+    <h3>Let's save your next wish!</h3>
+</section>
 
 
 
@@ -15,26 +28,24 @@
 
 <span th:if="${message != 'Right!'}">
     <form action="/valid" method="post">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password">
-        <input type="submit" value="Login">
+        <div class="form-group">
+             <label for="username">Username</label>
+             <input type="text" id="username" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button type="submit" class="button">Login</button>
     </form>
-
 
 </span>
 
 
-<p>User ID: <span th:text="${id}"></span></p>
 
-
---test--
-<td>
-    <form action="/ShowList" method="get">
-        <button type="submit">Update</button>
-    </form>
-</td>
+<footer >
+    <p th:class="light-text" >Ønskeskyen 2024</p>
+</footer>
 
 </body>
 </html>

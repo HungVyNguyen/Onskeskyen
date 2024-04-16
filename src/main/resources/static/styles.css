@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+body {
+    font-family: fantasy;
+}
+
+header {
+    background-color:lavenderblush;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container {
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container img {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.inspiration-section {
+    text-align: center;
+}
+
+.form-group {
+    text-align: center;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-control {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color:lavenderblush;
+}
+
+footer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-button,
+.addlist-button {
+    background-color: #f7f7f7;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.logout-button:hover,
+.addlist-button:hover {
+    background-color: #ccc;
+    color: #333;
+}
+.new-product-form {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.new-product-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.new-product-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.new-product-form button {
+    background-color: lavender;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.new-product-form button:hover {
+    background-color: lavenderblush;
+}
+
+.wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
