@@ -25,4 +25,18 @@ public class Wishlistservice {
     public void insert(String title, int userid) {
         wishlistrepository.insert(title,userid);
     }
+
+    public void delete(int id) {
+        wishlistrepository.delete(id);
+    }
+
+    public Wishlist getspicifikwishlist(int id) {
+        return wishlistrepository.getspecifikwishlist(id);
+    }
+
+    public List<Wishlist> getall() {
+        return wishlistrepository.getall();
+    }
+
+
 }

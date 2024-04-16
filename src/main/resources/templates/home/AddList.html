@@ -15,7 +15,15 @@
 
         <td th:text="${list.user_id}"></td>
 
+        <td>
+            <form action="/confirm_delete" method="get">
+                <input type="hidden" name="id" th:value="${list.wishlist_id}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
     </tr>
+
+
 
 </table>
 
@@ -29,6 +37,12 @@
     <form action="/new" method="get">
         <input type="hidden" name= "userid" th:value="${userid2}">
         <button type="submit" >AddList</button>
+    </form>
+</td>
+<td>
+    <form action="/showthislist" method="get">
+        <input type="hidden" name="alllist">
+        <button type="submit">showall</button>
     </form>
 </td>
 
