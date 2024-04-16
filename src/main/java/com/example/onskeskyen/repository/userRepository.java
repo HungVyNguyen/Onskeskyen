@@ -27,3 +27,4 @@ public class userRepository {
         jdbcTemplate.update(query, username, password, imagepath);
     }
 }
+
