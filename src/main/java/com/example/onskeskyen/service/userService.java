@@ -21,4 +21,8 @@ public class userService {
     public  void createUser(String username, String password, String imagepath){
         userrepository.createUser(username, password, imagepath);
     }
+    public int getUserIdForWishlist(int wishlistId) {
+        // Delegate the call to userRepository
+        return userrepository.getUserIdForWishlist(wishlistId);
+    }
 }

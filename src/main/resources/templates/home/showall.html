@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<table>
+    <td>Wishlist_id</td><td>name</td><td>user_id</td>
+    <tr th:each="list : ${alllist}">
+        <td th:text="${list.wishlist_id}"></td>
+
+        <td th:text="${list.name}"></td>
+
+        <td th:text="${list.user_id}"></td>
+
+    </tr>
+
+</table>
+
+
+</body>
+</html>

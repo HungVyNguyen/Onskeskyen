@@ -18,7 +18,7 @@ public class userRepository {
 
     public List<User> getuserlist() {
         String quary = "select * from users;";
-        RowMapper rowMapper = new BeanPropertyRowMapper<>(User.class); //Jeg har slettet <User> da jeg ikke tror, at der er behov for det
+        RowMapper<User> rowMapper = new BeanPropertyRowMapper<>(User.class);
         return jdbcTemplate.query(quary,rowMapper);
     }
 
@@ -26,5 +26,10 @@ public class userRepository {
         String query = "insert into users (username, password, imagepath)" + "values(?, ?, ?);";
         jdbcTemplate.update(query, username, password, imagepath);
     }
+    public int getUserIdForWishlist(int wishlistId) {
+        String query = "SELECT user_id FROM wishlists WHERE wishlist_id = ?";
+        return jdbcTemplate.queryForObject(query, Integer.class, wishlistId);
+    }
+
 }
 

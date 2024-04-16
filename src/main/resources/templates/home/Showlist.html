@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Show Wish List</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-<table>
-    <td>user id</td><td>username</td><td>show wish list</td>
-    <tr th:each="list : ${Userlist}">
-        <td th:text="${list.user_id}"></td>
 
-        <td th:text="${list.username}"></td>
+<div class="wishlist-container">
+    <table>
+        <td>user id</td><td>username</td><td>show wish list</td>
+        <tr th:each="list : ${Userlist}">
+            <td th:text="${list.user_id}"></td>
+            <td th:text="${list.username}"></td>
+            <td>
+                <form action="/Showmylist" method="get">
+                    <input type="hidden" name="id" th:value="${list.user_id}">
+                    <button type="submit">Update</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
 
-
-
-    <td>
-        <form action="/Showmylist" method="get">
-            <input type="hidden" name="id" th:value="${list.user_id}">
-            <button type="submit">Update</button>
-        </form>
-    </td>
-    </tr>
-</table>
-
+<footer>
+    <p>&copy; Ønskeskyen 2024 </p>
+</footer>
 
 </body>
 </html>

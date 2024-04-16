@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<tr>
+    <td> ID</td><td th:text="${wishlist.wishlist_id}"></td>
+</tr>
+<td> Title</td><td th:text="${wishlist.name}"></td>
+
+</tr>
+
+<tr>
+    <form action="/delete" method="post">
+        <input type="hidden" name="id" th:value="${list2}">
+        <button type="submit"> Delete</button>
+    </form>
+
+    <form action="/cancel" method="get">
+        <input type="hidden" name="id" th:value="${list2}">
+        <button>cancel</button>
+    </form>
+
+</tr>
+</body>
+</html>

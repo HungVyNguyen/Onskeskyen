@@ -2,24 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Add New Wish</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<table>
-    <tr>
-        <form action="/insert" method="post">
-            <td>Title</td><td><input type="text" name="title"></td>
-            <br>
-            <td><input type="hidden" name="userid3" th:value="${userid4}"></td>
-            <br>
-            <button type="submit">insert</button>
-        </form>
 
-        <form action="/ShowList" method="get">
-            <button>Cancel</button>
-        </form>
-    </tr>
-</table>
+<header>
+    <h1>Add New Wish</h1>
+</header>
+
+<div class="new-product-form">
+    <form action="/insertprodukt" method="post">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <input type="hidden" name="userid3" value="${userid4}">
+        <button type="submit">Insert</button>
+    </form>
+
+    <form action="/ShowList" method="get">
+        <button>Cancel</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; Ønskeskyen 2024 </p>
+</footer>
+
 </body>
 </html>

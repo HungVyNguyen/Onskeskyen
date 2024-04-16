@@ -11,7 +11,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/insert")
+    @PostMapping("/insertprodukt")
     public String insert(@RequestParam String name, @RequestParam String description, @RequestParam double price, @RequestParam int amount, @RequestParam String imagepath, @RequestParam int wishlist_id) {
         productService.insert(name, description, price, amount, imagepath, wishlist_id);
         return "home/index";

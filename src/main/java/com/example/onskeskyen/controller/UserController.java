@@ -23,13 +23,31 @@ public class UserController {
     private userService userservice;
 
 
-    /*
-    @GetMapping("/ShowList")
-    public String Wishlist(Model model){
-        model.addAttribute("Wishlist2",wishlistservice.getwishlist());
-        return "home/Showlist";
+
+    @GetMapping("/cancel")
+    public String cancel(@RequestParam int id){
+        int idValue = userservice.getUserIdForWishlist(id);
+        return "redirect:/Showmylist?id=" + idValue;
     }
-*/
+    @PostMapping("/delete")
+    public String delete(@RequestParam int id){
+        int idValue = userservice.getUserIdForWishlist(id);
+        wishlistservice.delete(id);
+        return "redirect:/Showmylist?id=" + idValue;
+    }
+
+    @GetMapping("/confirm_delete")
+    public String confirmdelete(@RequestParam int id, Model model){
+        model.addAttribute("list2",id);
+        model.addAttribute(wishlistservice.getspicifikwishlist(id));
+        return "home/confirm_delete";
+    }
+
+    @GetMapping("/showthislist")
+    public String mylistmedwishlist(Model model){
+        model.addAttribute("alllist",wishlistservice.getall());
+        return "home/showall";
+    }
 
     @GetMapping("/create_user")
     public String createUser(){
