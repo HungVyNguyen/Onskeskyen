@@ -18,11 +18,11 @@
             <input type="text" id="title" name="title">
         </div>
         <input type="hidden" name="userid3" th:value="${userid4}">
-        <button type="submit" class="insert_button">Insert</button>
+        <button type="submit">Insert</button>
     </form>
-    <form action="/cancel" method="get">
-        <input type="hidden" name="id" th:value="${userid4}">
-        <button class="cancel_button_addwishlist">Cancel</button>
+
+    <form action="/ShowList" method="get">
+        <button>Cancel</button>
     </form>
 </div>
 
