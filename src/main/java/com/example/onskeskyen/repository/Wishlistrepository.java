@@ -35,10 +35,9 @@ public class Wishlistrepository {
 
     public void delete(int id) {
         String query = "DELETE FROM products WHERE wishlist_id IN (SELECT wishlist_id FROM wishlists WHERE wishlist_id = ?);";
-        jdbcTemplate.update(query, id); // Delete products related to the user
-
+        jdbcTemplate.update(query, id);
         query = "DELETE FROM wishlists WHERE wishlist_id = ?;";
-        jdbcTemplate.update(query, id); // Delete wishlists of the user
+        jdbcTemplate.update(query, id);
     }
 
     public Wishlist getspecifikwishlist(int id) {
@@ -52,6 +51,7 @@ public class Wishlistrepository {
         RowMapper<Wishlist> rowMapper = new BeanPropertyRowMapper<>(Wishlist.class);
         return jdbcTemplate.query(quary,rowMapper);
     }
+
 
 
 }
