@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My wishlist</title>
+    <title>My wishlists</title>
     <link href="/styles.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
 <header>
-    <h1>My Wishlist</h1>
+    <h1>My Wishlists</h1>
 </header>
 
 <table class="wishlist-table">
@@ -28,7 +28,7 @@
         <td>
             <form action="/confirm_delete" method="get">
                 <input type="hidden" name="id" th:value="${list.wishlist_id}">
-                <button type="submit">Delete</button>
+                <button type="submit" class="delete_button_wishlist">Delete</button>
             </form>
         </td>
     </tr>
@@ -49,11 +49,6 @@
         <button class="addlist-button" type="submit">Add List</button>
     </form>
 
-
-    <form action="/showthislist" method="get">
-        <input type="hidden" name="alllist">
-        <button type="submit">showall</button>
-    </form>
 
 
 </div>

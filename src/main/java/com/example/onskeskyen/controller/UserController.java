@@ -43,11 +43,6 @@ public class UserController {
         return "home/confirm_delete";
     }
 
-    @GetMapping("/showthislist")
-    public String mylistmedwishlist(Model model){
-        model.addAttribute("alllist",wishlistservice.getall());
-        return "home/showall";
-    }
 
     @GetMapping("/create_user")
     public String createUser(){
