@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
   <meta charset="UTF-8">
   <title>$Title$</title>
 </head>
 <body>
 $END$
+=======
+    <meta charset="UTF-8">
+    <title>Create User</title>
+</head>
+<body>
+<h1 Create User</h1>
+<table>
+    <tr>
+        <form action="/create_user" method="post" th:object="${user}">
+            <td>Username</td><td><input type="text" th:field="${user.username}"></td>
+            <br>
+            <td>password</td><td><input type="text" th:field="${user.password}"></td>
+            <br>
+            <button type="submit">create user</button>
+        </form>
+        <form action="/" method="get">
+            <button>Cancel</button>
+        </form>
+    </tr>
+</table>
+
+
+
+
+>>>>>>> c62d2ecdafba30000c2e25bc70291372da2af2cb
 </body>
 </html>

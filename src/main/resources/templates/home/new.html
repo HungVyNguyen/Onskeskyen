@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Wish</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<header>
+    <h1>Add New Wish</h1>
+</header>
+
+<div class="new-product-form">
+    <form action="/insert" method="post">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <input type="hidden" name="userid3" th:value="${userid4}">
+        <button type="submit">Insert</button>
+    </form>
+    <form action="/cancel" method="get">
+        <input type="hidden" name="id" th:value="${userid4}">
+        <button>cancel</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; Ønskeskyen 2024 </p>
+</footer>
+
+</body>
+</html>

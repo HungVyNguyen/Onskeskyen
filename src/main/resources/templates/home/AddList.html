@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My wishlist</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<header>
+    <h1>My Wishlist</h1>
+</header>
+
+<table class="wishlist-table">
+    <tr>
+        <th>Wishlist ID</th>
+        <th>Name</th>
+        <th>User ID</th>
+    </tr>
+    <tr th:each="list : ${mywishlist}">
+        <td th:text="${list.wishlist_id}"></td>
+
+        <td th:text="${list.name}"></td>
+
+        <td th:text="${list.user_id}"></td>
+
+        <td>
+            <form action="/confirm_delete" method="get">
+                <input type="hidden" name="id" th:value="${list.wishlist_id}">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+
+
+
+</table>
+
+<div class="button-container">
+    <form action="/" method="get">
+        <button class="logout-button" type="submit">Logout</button>
+    </form>
+
+
+
+    <form action="/new" method="get">
+        <input type="hidden" name="userid" th:value="${userid2}">
+        <button class="addlist-button" type="submit">Add List</button>
+    </form>
+
+
+    <form action="/showthislist" method="get">
+        <input type="hidden" name="alllist">
+        <button type="submit">showall</button>
+    </form>
+
+
+</div>
+<footer>
+    <p>&copy; Ønskeskyen 2024 </p>
+</footer>
+
+</body>
+</html>
