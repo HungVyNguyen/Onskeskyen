@@ -54,13 +54,19 @@ public class UserController {
         return "home/create_user";
     }
 
-    @PostMapping("/create_user")
+
+
+    @PostMapping("/create_user1")
     public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String imagepath){
+
        userservice.createUser(username, password, imagepath);
 
         return "redirect:/";
 
     }
+
+
+
 
     @GetMapping("/Showmylist")
     public String myList(Model model, @RequestParam int id){
