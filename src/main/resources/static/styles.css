@@ -57,24 +57,6 @@ header {
     border-radius: 5px;
 }
 
-.button {
-    background-color:lavender;
-    border: none;
-    color: #333;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 20px auto;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color:lavenderblush;
-}
 
 footer {
     background-color: #f7f7f7;
@@ -90,27 +72,6 @@ footer p {
     margin-top: 20px;
 }
 
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.logout-button,
-.addlist-button {
-    background-color: #f7f7f7;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.logout-button:hover,
-.addlist-button:hover {
-    background-color: #ccc;
-    color: #333;
-}
 .new-product-form {
     padding: 20px;
     margin: 20px auto;
@@ -128,22 +89,292 @@ footer p {
     margin-bottom: 10px;
 }
 
+.wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+/* Tables */
+
+.wishlist-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+
+}
+.wishlist-table th,
+.wishlist-table td {
+    padding: 10px;
+    text-align: left;
+}
+.action-form {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.confirm_delete_table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.createuser_title {
+        font-weight: normal;
+        text-align: center;
+}
+.create_user_table {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create_user_table td {
+    text-align: center;
+    padding: 10px;
+}
+.create_user_table form {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.create_user_form {
+    text-align: center;
+    margin: 0 auto; /* Center the form horizontally */
+    max-width: 500px;
+}
+
+.create_user_form table {
+    width: 100%;
+}
+.new-product-form {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.new-product-form h2 {
+    font-weight: normal;
+    text-align: center;
+}
+
+.new-product-form table {
+    width: 100%;
+}
+
+.new-product-form table td {
+    text-align: center;
+    padding: 10px;
+}
+.new-product-form input[type="text"],
+.new-product-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.edit-product-form {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.edit-product-form h2 {
+    font-weight: normal;
+    text-align: center;
+}
+
+.edit-product-form table {
+    width: 100%;
+}
+
+.edit-product-form table td {
+    text-align: center;
+    padding: 10px;
+}
+
+.edit-product-form input[type="text"],
+.edit-product-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+/* Buttons */
+
+.login_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login_button:hover {
+    background-color:lavenderblush;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create_user_button,
+.cancel_createuser_button{
+    background-color:#ebd8e5;
+    border: none;
+    color: #333;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    margin: 10px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.create_user_button:hover,
+.cancel_createuser_button:hover{
+    background-color:lavenderblush;
+    color: #333;
+}
+
+
+.logout-button,
+.addlist-button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover,
+.addlist-button:hover {
+    background-color:lavenderblush;
+    color: #333;
+}
+
 .new-product-form button {
     background-color: lavender;
     border: none;
     color: #333;
     cursor: pointer;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .new-product-form button:hover {
     background-color: lavenderblush;
 }
 
-.wishlist-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+
+.cancel_button,
+.new_product_button,
+.goback_button,
+.save_button,
+.edit_product_button{
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.delete_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel_button:hover,
+.new_product_button:hover,
+.goback_button:hover,
+.save_button:hover,
+.edit_product_button:hover {
+    background-color: cadetblue;
+}
+
+.delete_button:hover {
+    background-color:cadetblue
+}
+
+.delete_button_wishlist,
+.action-button,
+.view_details_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete_button_wishlist:hover,
+.action-button:hover,
+.view_details_button:hover {
+    background-color:cadetblue
+}
+
+.insert_button,
+.cancel_button_addwishlist {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
 }

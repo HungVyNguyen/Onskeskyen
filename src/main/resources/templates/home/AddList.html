@@ -2,40 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My wishlist</title>
+    <title>My wishlists</title>
     <link href="/styles.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 
 <header>
-    <h1>My Wishlist</h1>
+    <h1>My Wishlists</h1>
 </header>
 
 <table class="wishlist-table">
     <tr>
-        <th>Wishlist ID</th>
         <th>Name</th>
-        <th>User ID</th>
+        <th>Action</th>
+
     </tr>
     <tr th:each="list : ${mywishlist}">
-        <td th:text="${list.wishlist_id}"></td>
 
         <td th:text="${list.name}"></td>
 
-        <td th:text="${list.user_id}"></td>
-
         <td>
-            <form action="/showProducts" method="get">
+            <form action="/showProducts" method="get" class="action-form">
                 <input type="hidden" name="wishlist_id" th:value="${list.wishlist_id}">
-                <input type="submit" value="Open">
+                <input type="submit" value="Open" class="action-button">
             </form>
         </td>
 
         <td>
-            <form action="/confirm_delete" method="get">
+            <form action="/confirm_delete" method="get" class="action-form">
                 <input type="hidden" name="id" th:value="${list.wishlist_id}">
-                <button type="submit">Delete</button>
+                <button type="submit" class="delete_button_wishlist">Delete</button>
             </form>
         </td>
 
@@ -57,11 +54,6 @@
         <button class="addlist-button" type="submit">Add List</button>
     </form>
 
-
-    <form action="/showthislist" method="get">
-        <input type="hidden" name="alllist">
-        <button type="submit">showall</button>
-    </form>
 
 
 </div>

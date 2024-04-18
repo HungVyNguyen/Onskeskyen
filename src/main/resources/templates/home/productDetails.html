@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="${product.name}"></title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -23,13 +24,17 @@
 
  <form action="/editProduct" method="get">
      <input type="hidden" name="product_id" th:value="${product.product_id}">
-     <input type="submit" value="Edit">
+     <input type="submit" value="Edit" class="edit_product_button">
  </form>
 
 <form action="/showProducts" method="get">
     <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
-    <input type="submit" value="Go back">
+    <input type="submit" value="Go back" class="goback_button">
 </form>
+
+<footer >
+    <p th:class="light-text" >&copy; Ønskeskyen 2024</p>
+</footer>
 
 </body>
 </html>

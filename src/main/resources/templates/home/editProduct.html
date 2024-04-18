@@ -3,42 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title th:inline="text">Edit details for [[${product.name}]]</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<form action="/updateProduct" method="post" th:object="${product}">
-    <table>
-        <tr>
-            <td>Name</td>
-            <td><input type="text" placeholder="Required" th:field="*{name}" autofocus required></td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td><input type="text" th:field="*{description}"></td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td><input type="number" placeholder="Price in DKK" min="0" step="0.01" th:field="*{price}"></td>
-        </tr>
-        <tr>
-            <td>Amount</td>
-            <td>
-                <input type="number" placeholder="Must be 1 or more" min="1" th:field="*{amount}" required>
-            </td>
-        </tr>
-    </table>
-    <input type="hidden" th:field="*{product_id}">
-    <input type="hidden" th:field="*{wishlist_id}">
-    <input type="submit" value="Save">
-</form>
+<div class="edit-product-form">
+    <h2>Edit details for [[${product.name}]]</h2>
 
+    <form action="/updateProduct" method="post" th:object="${product}">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" placeholder="Required" th:field="*{name}" autofocus required></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" th:field="*{description}"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="number" placeholder="Price in DKK" min="0" step="0.01" th:field="*{price}"></td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="number" placeholder="Must be 1 or more" min="1" th:field="*{amount}" required>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" th:field="*{product_id}">
+        <input type="hidden" th:field="*{wishlist_id}">
+        <input type="submit" class="save_button" value="Save">
+    </form>
 
+    <form action="/productDetails" method="get">
+        <input type="hidden" name="product_id" th:value="${product.product_id}">
+        <input type="submit" class="cancel_button" value="Cancel">
+    </form>
+</div>
 
-
-<form action="/productDetails" method="get">
-    <input type="hidden" name="product_id" th:value="${product.product_id}">
-    <input type="submit" value="Cancel">
-</form>
+<footer >
+    <p th:class="light-text" >&copy; Ønskeskyen 2024</p>
+</footer>
 
 </body>
 </html>

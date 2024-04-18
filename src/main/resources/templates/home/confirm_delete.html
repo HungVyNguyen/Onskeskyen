@@ -3,28 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 
+<table class="confirm_delete_table">
 <tr>
-    <td> ID</td><td th:text="${wishlist.wishlist_id}"></td>
-</tr>
+
 <td> Title</td><td th:text="${wishlist.name}"></td>
+    </tr>
+</table>
 
 </tr>
 
 <tr>
     <form action="/delete" method="post">
         <input type="hidden" name="id" th:value="${list2}">
-        <button type="submit"> Delete</button>
+        <button type="submit" class="delete_button"> Delete</button>
     </form>
 
     <form action="/cancel" method="get">
         <input type="hidden" name="id" th:value="${list2}">
-        <button>cancel</button>
+        <button class="cancel_button">Cancel</button>
     </form>
 
-</tr>
+    </tr>
+
+<footer >
+    <p th:class="light-text" >&copy; Ønskeskyen 2024</p>
+</footer>
+
 </body>
 </html>

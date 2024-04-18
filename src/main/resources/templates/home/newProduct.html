@@ -3,47 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new product</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
+<div class="new-product-form">
+    <h2>Add new product</h2>
 
-<form action="/insertProduct" method="post" th:object="${product}">
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>
-                <input type="text" placeholder="Required" th:field="*{name}" autofocus required>
-            </td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td>
-                <input type="text" th:field="*{description}">
-            </td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td>
-                <input type="number" placeholder="Price in DKK" value="23" min="0" step="0.01" th:field="*{price}">
-            </td>
-        </tr>
-        <tr>
-            <td>Amount</td>
-            <td>
-                <input type="number" placeholder="Must be 1 or more" min="1" th:field="*{amount}" required>
-            </td>
-        </tr>
-    </table>
-    <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
-    <input type="submit" value="Add to list">
+    <form action="/insertProduct" method="post" th:object="${product}">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" placeholder="Required" th:field="*{name}" autofocus required>
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>
+                    <input type="text" th:field="*{description}">
+                </td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>
+                    <input type="number" placeholder="Price in DKK" value="23" min="0" step="0.01" th:field="*{price}">
+                </td>
+            </tr>
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="number" placeholder="Must be 1 or more" min="1" th:field="*{amount}" required>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+        <input type="submit" class="new_product_button" value="Add to list">
+    </form>
 
-</form>
+    <form action="/showProducts" method="get">
+        <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+        <input type="submit" class="goback_button" value="Go back">
+    </form>
+</div>
 
-<form action="/showProducts" method="get">
-    <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
-    <input type="submit" value="Go back">
-</form>
-
+<footer >
+    <p th:class="light-text" >&copy; Ønskeskyen 2024</p>
+</footer>
 
 </body>
 </html>

@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Product list</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
 
@@ -11,14 +13,14 @@
         <td>
             <form action="/productDetails" method="get">
                 <input type="hidden" name="product_id" th:value="${product.product_id}">
-                <input type="submit" value="View details">
+                <input type="submit" value="View details" class="view_details_button">
             </form>
         </td>
         <td>
             <form action="/deleteProduct" method="post">
                 <input type="hidden" name="product_id" th:value="${product.product_id}">
                 <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="delete_button_wishlist">
             </form>
         </td>
     </tr>
@@ -26,13 +28,17 @@
 
 <form action="/newProduct" method="get">
     <input type="hidden" name="wishlist_id" th:value="${wishlist.wishlist_id}">
-    <input type="submit" value="New product">
+    <input type="submit" value="New product" class="new_product_button">
 </form>
 
 <form action="/Showmylist" method="get">
     <input type="hidden" name="id" th:value="${wishlist.user_id}">
-    <input type="submit" value="Go back">
+    <input type="submit" value="Go back" class="goback_button">
 </form>
+
+<footer >
+    <p th:class="light-text" >&copy; Ønskeskyen 2024</p>
+</footer>
 
 </body>
 </html>
