@@ -6,8 +6,15 @@ public class Product {
     private String description;
     private double price;
     private int amount;
+    private String imagepath;
+    private int wishlist_id;
 
     public Product() {
+    }
+
+    public Product(int wishlist_id) {
+        this.wishlist_id = wishlist_id;
+        this.amount = 1;
     }
 
     public int getProduct_id() {
@@ -65,8 +72,5 @@ public class Product {
     public void setWishlist_id(int wishlist_id) {
         this.wishlist_id = wishlist_id;
     }
-
-    private String imagepath;
-    private int wishlist_id;
 
 }

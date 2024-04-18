@@ -1,31 +1,64 @@
 package com.example.onskeskyen.controller;
 
 import com.example.onskeskyen.service.ProductService;
+import com.example.onskeskyen.service.Wishlistservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import com.example.onskeskyen.models.Product;
 
 @Controller
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private Wishlistservice wishlistService;
 
-    @PostMapping("/insertprodukt")
-    public String insert(@RequestParam String name, @RequestParam String description, @RequestParam double price, @RequestParam int amount, @RequestParam String imagepath, @RequestParam int wishlist_id) {
-        productService.insert(name, description, price, amount, imagepath, wishlist_id);
-        return "home/index";
+    @GetMapping("/showProducts")
+    public String index(Model model, @RequestParam int wishlist_id) {
+        model.addAttribute("products", productService.getAllProducts(wishlist_id));
+        model.addAttribute("wishlist", wishlistService.getspicifikwishlist(wishlist_id));
+        return "home/showProducts";
     }
 
-    @PostMapping("/update")
-    public String update(@RequestParam int product_id, @RequestParam String name, @RequestParam String description, @RequestParam double price, @RequestParam int amount, @RequestParam String imagepath, @RequestParam int wishlist_id) {
-        productService.update(product_id, name, description, price, amount, imagepath, wishlist_id);
-        return "home/index";
+    @GetMapping("/newProduct")
+    public String configureNew(Model model, @RequestParam int wishlist_id) {
+        model.addAttribute("product", new Product(wishlist_id));
+        return "home/newProduct";
     }
 
-    @PostMapping("/remove")
-    public String delete(@RequestParam int product_id) {
+    @PostMapping("/insertProduct")
+    public String insert(@ModelAttribute("product") Product product) {
+        productService.insert(product);
+        return "redirect:/showProducts?wishlist_id=" + product.getWishlist_id();
+    }
+
+    @GetMapping("/productDetails")
+    public String viewProductDetails(Model model, @RequestParam int product_id) {
+        model.addAttribute("product", productService.getProduct(product_id));
+        return "home/productDetails";
+    }
+
+    @PostMapping("/deleteProduct")
+    public String deleteProduct(@RequestParam int product_id, @RequestParam int wishlist_id) {
         productService.delete(product_id);
-        return "home/index";
+        return "redirect:/showProducts?wishlist_id=" + wishlist_id;
     }
+
+    @GetMapping("/editProduct")
+    public String editProduct(Model model, @RequestParam int product_id) {
+        model.addAttribute("product", productService.getProduct(product_id));
+        return "home/editProduct";
+    }
+
+    @PostMapping("/updateProduct")
+    public String updateProduct(@ModelAttribute("product") Product product) {
+        productService.update(product);
+        return "redirect:/productDetails?product_id=" + product.getProduct_id();
+    }
+
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new product</title>
+</head>
+<body>
+
+
+<form action="/insertProduct" method="post" th:object="${product}">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" placeholder="Required" th:field="*{name}" autofocus required>
+            </td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>
+                <input type="text" th:field="*{description}">
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>
+                <input type="number" placeholder="Price in DKK" value="23" min="0" step="0.01" th:field="*{price}">
+            </td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td>
+                <input type="number" placeholder="Must be 1 or more" min="1" th:field="*{amount}" required>
+            </td>
+        </tr>
+    </table>
+    <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+    <input type="submit" value="Add to list">
+
+</form>
+
+<form action="/showProducts" method="get">
+    <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+    <input type="submit" value="Go back">
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product list</title>
+</head>
+<body>
+
+<table>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td>
+            <form action="/productDetails" method="get">
+                <input type="hidden" name="product_id" th:value="${product.product_id}">
+                <input type="submit" value="View details">
+            </form>
+        </td>
+        <td>
+            <form action="/deleteProduct" method="post">
+                <input type="hidden" name="product_id" th:value="${product.product_id}">
+                <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<form action="/newProduct" method="get">
+    <input type="hidden" name="wishlist_id" th:value="${wishlist.wishlist_id}">
+    <input type="submit" value="New product">
+</form>
+
+<form action="/Showmylist" method="get">
+    <input type="hidden" name="id" th:value="${wishlist.user_id}">
+    <input type="submit" value="Go back">
+</form>
+
+</body>
+</html>

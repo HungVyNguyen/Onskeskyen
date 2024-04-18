@@ -2,6 +2,7 @@ package com.example.onskeskyen.controller;
 
 
 import com.example.onskeskyen.models.User;
+import com.example.onskeskyen.models.Wishlist;
 import com.example.onskeskyen.service.Wishlistservice;
 import com.example.onskeskyen.service.userService;
 import jakarta.servlet.http.HttpSession;

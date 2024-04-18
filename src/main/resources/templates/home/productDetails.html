@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${product.name}"></title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>Name</td><td th:text="${product.name}"></td>
+    </tr>
+    <tr>
+        <td>Description</td><td th:text="${product.description}"></td>
+    </tr>
+    <tr>
+        <td>Price</td><td th:text="${product.price}"></td>
+    </tr>
+    <tr>
+        <td>Amount</td><td th:text="${product.amount}"></td>
+    </tr>
+</table>
+
+ <form action="/editProduct" method="get">
+     <input type="hidden" name="product_id" th:value="${product.product_id}">
+     <input type="submit" value="Edit">
+ </form>
+
+<form action="/showProducts" method="get">
+    <input type="hidden" name="wishlist_id" th:value="${product.wishlist_id}">
+    <input type="submit" value="Go back">
+</form>
+
+</body>
+</html>

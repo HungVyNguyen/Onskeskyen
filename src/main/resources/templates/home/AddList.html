@@ -26,11 +26,19 @@
         <td th:text="${list.user_id}"></td>
 
         <td>
+            <form action="/showProducts" method="get">
+                <input type="hidden" name="wishlist_id" th:value="${list.wishlist_id}">
+                <input type="submit" value="Open">
+            </form>
+        </td>
+
+        <td>
             <form action="/confirm_delete" method="get">
                 <input type="hidden" name="id" th:value="${list.wishlist_id}">
                 <button type="submit">Delete</button>
             </form>
         </td>
+
     </tr>
 
 
