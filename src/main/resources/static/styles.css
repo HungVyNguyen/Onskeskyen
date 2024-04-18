@@ -57,24 +57,6 @@ header {
     border-radius: 5px;
 }
 
-.button {
-    background-color:lavender;
-    border: none;
-    color: #333;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 20px auto;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color:lavenderblush;
-}
 
 footer {
     background-color: #f7f7f7;
@@ -90,27 +72,6 @@ footer p {
     margin-top: 20px;
 }
 
-.button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.logout-button,
-.addlist-button {
-    background-color: #f7f7f7;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.logout-button:hover,
-.addlist-button:hover {
-    background-color: #ccc;
-    color: #333;
-}
 .new-product-form {
     padding: 20px;
     margin: 20px auto;
@@ -128,22 +89,160 @@ footer p {
     margin-bottom: 10px;
 }
 
+.wishlist-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+/* Tables */
+
+.wishlist-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+
+}
+.confirm_delete_table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Buttons */
+
+.login_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login_button:hover {
+    background-color:lavenderblush;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-button,
+.addlist-button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover,
+.addlist-button:hover {
+    background-color:lavenderblush;
+    color: #333;
+}
+
 .new-product-form button {
     background-color: lavender;
     border: none;
     color: #333;
     cursor: pointer;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .new-product-form button:hover {
     background-color: lavenderblush;
 }
 
-.wishlist-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+
+.cancel_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.delete_button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel_button:hover {
+    background-color: cadetblue;
+}
+
+.delete_button:hover {
+    background-color:cadetblue
+}
+
+.delete_button_wishlist {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete_button_wishlist:hover {
+    background-color:cadetblue
+}
+
+.insert_button,
+.cancel_button_addwishlist {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 10px;
 }

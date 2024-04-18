@@ -30,6 +30,8 @@ public class UserController {
         int idValue = userservice.getUserIdForWishlist(id);
         return "redirect:/Showmylist?id=" + idValue;
     }
+
+
     @PostMapping("/delete")
     public String delete(@RequestParam int id){
         int idValue = userservice.getUserIdForWishlist(id);
@@ -44,19 +46,14 @@ public class UserController {
         return "home/confirm_delete";
     }
 
-    @GetMapping("/showthislist")
-    public String mylistmedwishlist(Model model){
-        model.addAttribute("alllist",wishlistservice.getall());
-        return "home/showall";
-    }
-
     @GetMapping("/create_user")
     public String createUser(){
         return "home/create_user";
     }
 
-    @PostMapping("/create_user")
+    @PostMapping("/create_user1")
     public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String imagepath){
+
        userservice.createUser(username, password, imagepath);
 
         return "redirect:/";
@@ -69,13 +66,13 @@ public class UserController {
         model.addAttribute("mywishlist", wishlistservice.getmylist(id));
         return "home/AddList";
     }
-
+/*
     @GetMapping("/ShowList")
     public String Userlist(Model model){
         model.addAttribute("Userlist",userservice.getuserlist());
         return "home/Showlist";
     }
-
+*/
     @GetMapping("/new")
     public String insert( Model model, @RequestParam int userid){
         model.addAttribute("userid4", userid);
@@ -85,6 +82,7 @@ public class UserController {
     @PostMapping("/insert")
     public String insert(@RequestParam String title,@RequestParam int userid3){
         wishlistservice.insert(title,userid3);
+        System.out.println(userid3);
         return "redirect:/Showmylist?id=" + userid3;
     }
 

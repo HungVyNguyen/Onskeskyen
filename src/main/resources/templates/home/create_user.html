@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Create User</title>
+    <link href="/styles.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
-<h1 Create User</h1>
+<h1 >Create User </h1>
 <table>
     <tr>
-        <form action="/create_user" method="post" th:object="${user}">
-            <td>Username</td><td><input type="text" th:field="${user.username}"></td>
+        <form action="/create_user1" method="post">
+            <td>Username</td><td>
+            <input type="text" id="username" name="username"></td>
             <br>
-            <td>password</td><td><input type="text" th:field="${user.password}"></td>
+            <td>password</td><td><input type="text" id="password" name="password"></td>
             <br>
+            <td>image</td><td><input type="text" id="imagepath" name="imagepath"></td>
             <button type="submit">create user</button>
         </form>
         <form action="/" method="get">
