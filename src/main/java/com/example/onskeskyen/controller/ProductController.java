@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @PostMapping("/insertProduct")
-    public String insert(@ModelAttribute("product") Product product) {
+    public String insert(@ModelAttribute Product product) {
         productService.insert(product);
         return "redirect:/showProducts?wishlist_id=" + product.getWishlist_id();
     }
@@ -56,7 +56,7 @@ public class ProductController {
     }
 
     @PostMapping("/updateProduct")
-    public String updateProduct(@ModelAttribute("product") Product product) {
+    public String updateProduct(@ModelAttribute Product product) {
         productService.update(product);
         return "redirect:/productDetails?product_id=" + product.getProduct_id();
     }
