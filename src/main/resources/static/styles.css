@@ -314,7 +314,7 @@ footer p {
     transition: background-color 0.3s;
 }
 .delete_button {
-    background-color:lavender;
+    background-color:#FF0101FF;
     border: none;
     color: #333;
     padding: 10px 25px;
@@ -337,10 +337,24 @@ footer p {
 }
 
 .delete_button:hover {
-    background-color:cadetblue
+    background-color:#FF0101FF;
 }
 
-.delete_button_wishlist,
+.delete_button_wishlist{
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .action-button,
 .view_details_button {
     background-color:lavender;
@@ -357,7 +371,9 @@ footer p {
     transition: background-color 0.3s;
 }
 
-.delete_button_wishlist:hover,
+.delete_button_wishlist:hover{
+    background-color:#FF0101FF;
+}
 .action-button:hover,
 .view_details_button:hover {
     background-color:cadetblue
