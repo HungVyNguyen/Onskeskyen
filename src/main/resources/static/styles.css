@@ -237,7 +237,7 @@ footer p {
 }
 
 .create_user_button,
-.cancel_createuser_button{
+.cancel_createuser_button {
     background-color:#ebd8e5;
     border: none;
     color: #333;
@@ -257,9 +257,22 @@ footer p {
     background-color:lavenderblush;
     color: #333;
 }
+.logout-button {
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    margin: 10px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-
-.logout-button,
 .addlist-button {
     background-color:lavender;
     border: none;
@@ -337,10 +350,24 @@ footer p {
 }
 
 .delete_button:hover {
-    background-color:cadetblue
+    background-color:#FF0101FF;
 }
 
-.delete_button_wishlist,
+.delete_button_wishlist{
+    background-color:lavender;
+    border: none;
+    color: #333;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
 .action-button,
 .view_details_button {
     background-color:lavender;
@@ -357,7 +384,9 @@ footer p {
     transition: background-color 0.3s;
 }
 
-.delete_button_wishlist:hover,
+.delete_button_wishlist:hover{
+    background-color:#FF0101FF;
+}
 .action-button:hover,
 .view_details_button:hover {
     background-color:cadetblue
